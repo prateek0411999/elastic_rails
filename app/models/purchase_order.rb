@@ -10,4 +10,14 @@ class PurchaseOrder < ApplicationRecord
     #quering out the data
     #something like -> (PurchaseOrder.search query { match: {id: 1410 }}).results.first
 
+    settings index:  {number_of_shards: 1 } do 
+        mapping dynamic: 'false' do
+            indexes :id, type: :integer
+            indexes :purchase_date, type: :date, format: :date_optional_time
+            indexes :status, type: :keyword
+            indexes :payment_method, type: :keyword
+        end 
+    end
+
+
 end
