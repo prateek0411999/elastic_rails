@@ -67,4 +67,10 @@ class PurchaseOrder < ApplicationRecord
     end
 
 
+    # PurchaseOrder.__elasticsearch__.delete_index!
+    # PurchaseOrder.__elasticsearch__.create_index!
+    # purchase_order = PurchaseOrder.all.sample
+    # purchase_order.touch
+
+
 end

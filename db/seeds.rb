@@ -48,6 +48,7 @@ PurchaseOrder.all.find_each do |purchase_order|
     quantity = purchase_order.num_items_shipped + purchase_order.num_items_unshipped
   
     purchase_order.order_items.create!(
+      item_id: item.id,
       currency: %w[usd eur].sample,
       quantity_ordered: quantity,
       quantity_shipped: purchase_order.num_items_shipped,
